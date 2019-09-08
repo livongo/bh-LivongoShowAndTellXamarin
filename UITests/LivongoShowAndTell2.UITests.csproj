@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2F10373-706B-4333-ADC6-A8DD1960E362}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LivongoShowAndTell2.UITests</RootNamespace>
+    <AssemblyName>LivongoShowAndTell2.UITests</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.UITest">
+      <HintPath>..\packages\Xamarin.UITest.2.0.6\lib\Xamarin.UITest.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iOS\LivongoShowAndTell2.iOS.csproj">
+      <Project>{6B8A130A-45C1-43B1-9A15-1DE97447084B}</Project>
+      <Name>LivongoShowAndTell2.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <ReferenceSourceTarget>ProjectReference</ReferenceSourceTarget>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Droid\LivongoShowAndTell2.Droid.csproj">
+      <Project>{DF9AEE97-ACBF-4FA9-A248-416FB009D6ED}</Project>
+      <Name>LivongoShowAndTell2.Droid</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <ReferenceSourceTarget>ProjectReference</ReferenceSourceTarget>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tests.cs" />
+    <Compile Include="AppInitializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
